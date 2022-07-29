@@ -122,6 +122,10 @@ inline WasmResult proxy_set_shared_data(const char *key_ptr, size_t key_size, co
   return wordToWasmResult(
       exports::set_shared_data(WR(key_ptr), WS(key_size), WR(value_ptr), WS(value_size), WS(cas)));
 }
+inline WasmResult proxy_remove_shared_data(const char *key_ptr, size_t key_size, uint64_t cas){
+  return wordToWasmResult(
+    exports::remove_shared_data(WR(key_ptr), WS(key_size), WS(cas)));
+}
 
 // SharedQueue
 // Note: Registering the same queue_name will overwrite the old registration while preseving any

@@ -302,6 +302,12 @@ Word set_shared_data(Word key_ptr, Word key_size, Word value_ptr, Word value_siz
   return context->setSharedData(key.value(), value.value(), cas);
 }
 
+Word remove_shared_data(Word key_ptr, Word key_size, Word cas) {
+  auto *context = contextOrEffectiveContext();
+  auto key = context->wasmVm()->getMemory(key_ptr, key_size);
+  return context->removeSharedDataKey(key.value(), cas, nullptr);
+}
+
 Word register_shared_queue(Word queue_name_ptr, Word queue_name_size, Word token_ptr) {
   auto *context = contextOrEffectiveContext();
   auto queue_name = context->wasmVm()->getMemory(queue_name_ptr, queue_name_size);

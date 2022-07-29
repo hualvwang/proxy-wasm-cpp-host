@@ -112,6 +112,7 @@ Word clear_route_cache();
 Word get_shared_data(Word key_ptr, Word key_size, Word value_ptr_ptr, Word value_size_ptr,
                      Word cas_ptr);
 Word set_shared_data(Word key_ptr, Word key_size, Word value_ptr, Word value_size, Word cas);
+Word remove_shared_data(Word key_ptr, Word key_size, Word cas);
 Word register_shared_queue(Word queue_name_ptr, Word queue_name_size, Word token_ptr);
 Word resolve_shared_queue(Word vm_id_ptr, Word vm_id_size, Word queue_name_ptr,
                           Word queue_name_size, Word token_ptr);
