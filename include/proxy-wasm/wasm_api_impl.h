@@ -117,11 +117,11 @@ inline WasmResult proxy_get_shared_data(const char *key_ptr, size_t key_size,
 }
 //  If cas != 0 and cas != the current cas for 'key' return false, otherwise set the value and
 //  return true.
-inline WasmResult proxy_set_shared_data(const char *key_ptr, size_t key_size, const char *value_ptr,
-                                        size_t value_size, uint64_t cas) {
-  return wordToWasmResult(
-      exports::set_shared_data(WR(key_ptr), WS(key_size), WR(value_ptr), WS(value_size), WS(cas)));
-}
+// inline WasmResult proxy_set_shared_data(const char *key_ptr, size_t key_size, const char *value_ptr,
+//                                         size_t value_size, uint64_t cas) {
+//   return wordToWasmResult(
+//       exports::set_shared_data(WR(key_ptr), WS(key_size), WR(value_ptr), WS(value_size), WS(cas)));
+// }
 inline WasmResult proxy_remove_shared_data(const char *key_ptr, size_t key_size, uint64_t cas){
   return wordToWasmResult(
     exports::remove_shared_data(WR(key_ptr), WS(key_size), WS(cas)));
