@@ -183,7 +183,7 @@ Word pthread_equal(Word left, Word right);
 
 #define FOR_ALL_HOST_FUNCTIONS(_f)                                                                 \
   _f(log) _f(get_status) _f(set_property) _f(get_property) _f(send_local_response)                 \
-      _f(get_shared_data) _f(set_shared_data) _f(register_shared_queue) _f(resolve_shared_queue)   \
+      _f(get_shared_data) _f(set_shared_data) _f(remove_shared_data) _f(register_shared_queue) _f(resolve_shared_queue)   \
           _f(dequeue_shared_queue) _f(enqueue_shared_queue) _f(get_header_map_value)               \
               _f(add_header_map_value) _f(replace_header_map_value) _f(remove_header_map_value)    \
                   _f(get_header_map_pairs) _f(set_header_map_pairs) _f(get_header_map_size)        \
